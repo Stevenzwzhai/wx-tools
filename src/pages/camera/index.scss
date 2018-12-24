@@ -1,0 +1,59 @@
+@mixin bg-icon($imagePath) {
+        background-size: 56rpx;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(#{$imagePath});
+}
+@mixin btn() {
+  border: none;
+  &:after{
+    border: none;
+  }
+}
+.camera{
+  .camera-operate{
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    button{
+      flex: 1;
+      background-color: transparent;
+      @include btn();
+      &:nth-child(1) {
+        @include bg-icon('./images/device-pos.png');
+      }
+    }
+    .flash-on{
+      @include bg-icon('./images/flash-on.png');
+    }
+    .flash-off{
+      @include bg-icon('./images/flash-off.png');
+    }
+  }
+  .camera-body{
+    // height: 300px;//calc(～100vh-46PX);
+    // width: 100vw;
+    
+  }
+  .take-photo{
+    height: 108rpx;
+    width: 108rpx;
+    position: fixed;
+    bottom: 20rpx;
+    left: 50%;
+    margin-left: -54rpx;
+    z-index: 1000;
+    cover-image{
+      height: 108rpx;
+      width: 108rpx;
+    }
+    button {
+      height: 108rpx;
+      width: 108rpx;
+      @include btn();
+      background-color: transparent;
+      @include bg-icon('./images/take-photo.png');
+      background-size: cover;
+    }
+  }
+}

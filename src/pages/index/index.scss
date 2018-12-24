@@ -1,0 +1,15 @@
+.index{
+  .index-operation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16Px;
+    .picker{
+      flex: 1;
+    }
+    button{
+      font-size: 16Px;
+      width: 200rpx;
+    }
+  }
+}
